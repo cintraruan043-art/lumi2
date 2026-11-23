@@ -58,7 +58,7 @@ struct PhotoDetailView: View {
                 if let image = store.image(file) { Image(uiImage: image).resizable().scaledToFit().frame(maxHeight: .infinity) }
                 VStack(alignment: .leading, spacing: 5) {
                     Text(record.profile.name).font(.headline)
-                    Text(record.date.formatted(date: .long, time: .short)).font(.caption).foregroundStyle(.secondary)
+                    Text(record.date.formatted(date: .long, time: .shortened)).font(.caption).foregroundStyle(.secondary)
                 }.frame(maxWidth: .infinity, alignment: .leading)
                 Menu("Reprocess with another camera") {
                     ForEach(ProfileLibrary.all) { profile in Button(profile.name) { replacement = profile; reprocess(profile) } }
