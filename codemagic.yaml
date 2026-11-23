@@ -12,9 +12,9 @@ workflows:
         script: |
           set -e
           echo "Repository root: $(pwd)"
-          test -d LumiCamera
-          test -d LumiCameraTests
           test -f project.yml
+          test -f LumiCameraApp.swift
+          test -f CameraProfileTests.swift
           echo "Project files found."
       - name: Install XcodeGen
         script: |

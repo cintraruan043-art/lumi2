@@ -16,7 +16,15 @@ targets:
     type: application
     platform: iOS
     sources:
-      - path: LumiCamera
+      - path: CameraService.swift
+      - path: CameraView.swift
+      - path: GalleryView.swift
+      - path: HomeView.swift
+      - path: LumiCameraApp.swift
+      - path: Models.swift
+      - path: PhotoStore.swift
+      - path: ProcessingPipeline.swift
+      - path: ProfileLibrary.swift
     info:
       properties:
         CFBundleDisplayName: Lumi Camera
@@ -32,6 +40,6 @@ targets:
     type: bundle.unit-test
     platform: iOS
     sources:
-      - path: LumiCameraTests
+      - path: CameraProfileTests.swift
     dependencies:
       - target: LumiCamera
