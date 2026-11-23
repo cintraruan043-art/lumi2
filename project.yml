@@ -3,7 +3,6 @@ options:
   bundleIdPrefix: app.lumicamera
   deploymentTarget:
     iOS: "17.0"
-  createIntermediateGroups: true
 settings:
   base:
     SWIFT_VERSION: "5.0"
@@ -16,30 +15,28 @@ targets:
     type: application
     platform: iOS
     sources:
-      - path: CameraService.swift
-      - path: CameraView.swift
-      - path: GalleryView.swift
-      - path: HomeView.swift
-      - path: LumiCameraApp.swift
-      - path: Models.swift
-      - path: PhotoStore.swift
-      - path: ProcessingPipeline.swift
-      - path: ProfileLibrary.swift
+      - CameraService.swift
+      - CameraView.swift
+      - GalleryView.swift
+      - HomeView.swift
+      - LumiCameraApp.swift
+      - Models.swift
+      - PhotoStore.swift
+      - ProcessingPipeline.swift
+      - ProfileLibrary.swift
     info:
+      path: Info.plist
       properties:
         CFBundleDisplayName: Lumi Camera
-        NSCameraUsageDescription: "O Lumi Camera usa a câmera para capturar fotos."
-        NSPhotoLibraryAddUsageDescription: "O Lumi Camera salva as fotos que você escolher."
+        NSCameraUsageDescription: "O Lumi Camera usa a camera para capturar fotos."
+        NSPhotoLibraryAddUsageDescription: "O Lumi Camera salva as fotos que voce escolher."
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
-    settings:
-      base:
-        SWIFT_EMIT_LOC_STRINGS: YES
   LumiCameraTests:
     type: bundle.unit-test
     platform: iOS
     sources:
-      - path: CameraProfileTests.swift
+      - CameraProfileTests.swift
     dependencies:
       - target: LumiCamera
